@@ -22,18 +22,67 @@
 	<div id="panel">
 		<div class="col-xs-12 col-sm-6 col-md-6">
 			Godziny i dni tygodnia
-			<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-primary">Aktualny</button>
-			  <button type="button" class="btn btn-default">Poniedziałek</button>
-			  <button type="button" class="btn btn-default">Wtorek</button>
-			  <button type="button" class="btn btn-default">Środa</button>
-			  <button type="button" class="btn btn-default">Czwartek</button>
-			  <button type="button" class="btn btn-default">Piątek</button>
+			<div class="btn-group" data-toggle="buttons">
+
+			  <label class="btn btn-primary">
+			    <input type="radio" name="options" id="day1" autocomplete="off"> Poniedziałek
+			  </label>
+			  <label class="btn btn-primary">
+			    <input type="radio" name="options" id="day2" autocomplete="off"> Wtorek
+			  </label>
+			  <label class="btn btn-primary">
+			    <input type="radio" name="options" id="day3" autocomplete="off"> Środa
+			  </label>
+			  <label class="btn btn-primary">
+			    <input type="radio" name="options" id="day4" autocomplete="off"> Czwartek
+			  </label>
+			  <label class="btn btn-primary">
+			    <input type="radio" name="options" id="day5" autocomplete="off"> Piątek
+			  </label>
 			</div>
+			<hr>
+				<div class="btn-group" data-toggle="buttons">
+						
+					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="8:10-8:55">
+					    <input type="radio" name="options" id="l1" autocomplete="off"> 1
+					  </label>
+					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="9:05-9:50">
+					    <input type="radio" name="options" id="l2" autocomplete="off"> 2
+					  </label>
+					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="10:00-10:45">
+					    <input type="radio" name="options" id="l3" autocomplete="off"> 3
+					  </label>
+					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="11:05-11:50">
+					    <input type="radio" name="options" id="l4" autocomplete="off"> 4
+					  </label>
+					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="12:00-12:45">
+					    <input type="radio" name="options" id="l5" autocomplete="off"> 5
+					  </label>
+					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="12:55-13:40">
+					    <input type="radio" name="options" id="l6" autocomplete="off"> 6
+					  </label>
+					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="13:50-14:35">
+					    <input type="radio" name="options" id="l7" autocomplete="off"> 7
+					  </label>
+					</div>
 		</div>
-		<div class="col-xs-12 col-sm-6 col-md-6">Klasy</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">Klasy
+
+
+		</div>
 		<div class="col-xs-12 col-sm-6 col-md-6">Nauczyciele</div>
-		<div class="col-xs-12 col-sm-12 col-md-6">Info</div>
+		<div class="col-xs-12 col-sm-12 col-md-6">
+			<h2> Informacje </h2>
+			<p>Aplikacja służy do wyśwetlania pozycji klas w czasie rzeczywistym.</p>
+			<p>Twórcy: wypisz coś</p>
+			<p>
+			Wykorzystana technologia:
+			<ul class="list-unstyled">
+			  <li>Bootstrap</li>
+			  <li>D3.js</li>
+			</ul>
+			</p>
+		</div>
 	</div>
 	<!-- Scripts -->
 		<!-- jQuery2.x.min.js -->
@@ -42,5 +91,10 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<!-- D3.min.js -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+		<script type="text/javascript">
+			$(function () {
+			  $('[data-toggle="tooltip"]').tooltip()
+			})
+		</script>
 </body>
 </html>
