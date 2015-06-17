@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- TODO: zmienic nazwe wyswietlaną -->
 	<title>MAPA SZKOŁY</title>
 	<!-- Style -->
 		<!-- Latest compiled and minified CSS -->
@@ -15,73 +15,149 @@
 </head>
 <body>
 	<!-- Canvas -->
-	<!-- Tutaj odbywa się całe wyświelanie planu szkoły, animacje itp -->
-	<canvas></canvas>
+	<!-- Cały plan szkoły przechowywany w jednym pliku. Każde piętro w odpowiedniej warstwie. Manipulacja poszczególnymi warstwami w celu pokazanie pięter podświetlania sal lekcyjnych -->
+	<object type="image/svg+xml"  data="data/plan.svg"></object>
+
 	<!-- Panel -->
 	<!-- Przyciski, klasy, nauczyciele, guziczki zmienianie daty, godziny, sledzenie. -->
 	<div id="panel">
 		<div class="col-xs-12 col-sm-6 col-md-6">
-			Godziny i dni tygodnia
-			<div class="btn-group" data-toggle="buttons">
+			<h3>Godzina lekcyjna</h3>
+			<div class="btn-group btn-group-justified" data-toggle="buttons">
 
-			  <label class="btn btn-primary">
+			  <label class="btn btn-default col-xs-12">
 			    <input type="radio" name="options" id="day1" autocomplete="off"> Poniedziałek
 			  </label>
-			  <label class="btn btn-primary">
+			  <label class="btn btn-default col-xs-12">
 			    <input type="radio" name="options" id="day2" autocomplete="off"> Wtorek
 			  </label>
-			  <label class="btn btn-primary">
+			  <label class="btn btn-default col-xs-12">
 			    <input type="radio" name="options" id="day3" autocomplete="off"> Środa
 			  </label>
-			  <label class="btn btn-primary">
+			  <label class="btn btn-default col-xs-12 ">
 			    <input type="radio" name="options" id="day4" autocomplete="off"> Czwartek
 			  </label>
-			  <label class="btn btn-primary">
+			  <label class="btn btn-default col-xs-12">
 			    <input type="radio" name="options" id="day5" autocomplete="off"> Piątek
 			  </label>
 			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon" id="basic-addon1">Godz. lekcyjne</span>
+				<select class="form-control col-md-3">
+				  	<option> 8:10-8:55</option>
+					<option> 9:05-9:50</option>
+					<option>10:00-10:45</option>
+					<option>11:05-11:50</option>
+					<option>12:00-12:45</option>
+					<option>12:55-13:40</option>
+					<option>13:50-14:35</option>
+				</select>
+			</div>
 			<hr>
-				<div class="btn-group" data-toggle="buttons">
-						
-					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="8:10-8:55">
-					    <input type="radio" name="options" id="l1" autocomplete="off"> 1
-					  </label>
-					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="9:05-9:50">
-					    <input type="radio" name="options" id="l2" autocomplete="off"> 2
-					  </label>
-					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="10:00-10:45">
-					    <input type="radio" name="options" id="l3" autocomplete="off"> 3
-					  </label>
-					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="11:05-11:50">
-					    <input type="radio" name="options" id="l4" autocomplete="off"> 4
-					  </label>
-					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="12:00-12:45">
-					    <input type="radio" name="options" id="l5" autocomplete="off"> 5
-					  </label>
-					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="12:55-13:40">
-					    <input type="radio" name="options" id="l6" autocomplete="off"> 6
-					  </label>
-					  <label class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="13:50-14:35">
-					    <input type="radio" name="options" id="l7" autocomplete="off"> 7
-					  </label>
-					</div>
 		</div>
-		<div class="col-xs-12 col-sm-6 col-md-6">Klasy
-
-
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<h3>Klasy</h3>
+			<div class="" data-toggle="buttons">
+				<div class="btn-group btn-group-justified" >
+				  <label class="btn btn-default"><input type="radio" name="options" id="class1" autocomplete="off"> I a</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class2" autocomplete="off"> I b</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class3" autocomplete="off"> I c</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class4" autocomplete="off"> I d</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class5" autocomplete="off"> I e</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class6" autocomplete="off"> I f</label>
+				</div><br>
+				<div class="btn-group btn-group-justified" >
+				  <label class="btn btn-default"><input type="radio" name="options" id="class1" autocomplete="off"> II a</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class2" autocomplete="off"> II b</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class3" autocomplete="off"> II c</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class4" autocomplete="off"> II d</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class5" autocomplete="off"> II e</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class6" autocomplete="off"> II f</label>
+				</div><br>
+				<div class="btn-group btn-group-justified" >
+				  <label class="btn btn-default"><input type="radio" name="options" id="class1" autocomplete="off"> III a</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class2" autocomplete="off"> III b</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class3" autocomplete="off"> III c</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class4" autocomplete="off"> III d</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class5" autocomplete="off"> III e</label>
+				  <label class="btn btn-default"><input type="radio" name="options" id="class6" autocomplete="off"> III f</label>
+				</div>
+			</div>
+			<hr>
 		</div>
-		<div class="col-xs-12 col-sm-6 col-md-6">Nauczyciele</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<h3>Nauczyciele</h3>
+			<select class="form-control bg-info">
+			    </optionK.Budna </option>
+			    <option>J.Chwojnicka </option>
+			    <option>S.Czuryło </option>
+			    <option>M.Darul </option>
+			    <option>M.Drobniewska </option>
+			    <option>A.Gajewska </option>
+			    <option>K.Gajewski </option>
+			    <option>M.Gajtka </option>
+			    <option>D.Garbowska </option>
+			    <option>K.Garbowska </option>
+			    <option>J.Grabińska </option>
+			    <option>M.Idzikowska </option>
+			    <option>H.Jarmuła </option>
+			    <option>A.Jodko - Haupa </option>
+			    <option>M.Kaczyńska </option>
+			    <option>M.Kapuścińska </option>
+			    <option>J.Kleina </option>
+			    <option>A.Kleinert </option>
+			    <option>A.Kościowska </option>
+			    <option>M.Kozłowska </option>
+			    <option>A.Krajewska </option>
+			    <option>E.Krupa - Grabowska </option>
+			    <option>H.Lebiedź </option>
+			    <option>B.Lewandowicz </option>
+			    <option>M.Litwinienko </option>
+			    <option>K.Ławrukajtis </option>
+			    <option>K.Maj - Storoniak </option>
+			    <option>J.Manthey </option>
+			    <option>M.Michowska </option>
+			    <option>A.Olczyk </option>
+			    <option>K.Opalińska </option>
+			    <option>K.Pękacik </option>
+			    <option>H.Rembowska </option>
+			    <option>J.Ropel </option>
+			    <option>H.Schulte - Noelle </option>
+			    <option>J.Skotnicka </option>
+			    <option>U.Stawiarska </option>
+			    <option>S.Stąsiek </option>
+			    <option>S.Suchodolski </option>
+			    <option>T.Szturo </option>
+			    <option>A.Szymków </option>
+			    <option>V.Vacat </option>
+			    <option>D.Warcholak </option>
+			    <option>M.Zagierska </option>
+			    <option>K.Zapała </option>
+			    <option>J.Zaporowicz </option>
+			</select>
+			<hr>
+		</div>
 		<div class="col-xs-12 col-sm-12 col-md-6">
 			<h2> Informacje </h2>
 			<p>Aplikacja służy do wyśwetlania pozycji klas w czasie rzeczywistym.</p>
-			<p>Twórcy: wypisz coś</p>
+			<p>
+			<ul class="list-unstyled">
+				<li>Twórcy:</li>
+				<ul>
+				  <li>Ania Przybycień</li>
+				  <li>Norbert Szulc <a href="https://twitter.com/not7CD">@not7CD</a></li>
+				</ul>
+			</ul>
+			</p>
 			<p>
 			Wykorzystana technologia:
-			<ul class="list-unstyled">
+			<ul class="">
 			  <li>Bootstrap</li>
 			  <li>D3.js</li>
 			</ul>
 			</p>
+			<hr>
 		</div>
 	</div>
 	<!-- Scripts -->
