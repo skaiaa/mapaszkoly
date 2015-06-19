@@ -77,19 +77,29 @@
 		<!-- D3.min.js -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 
+		<script src="scripts/data-loader.js"></script>
 		<script src="scripts/plan-controller.js"></script>
 		<script src="scripts/timetable-controller.js"></script>
 		<script src="scripts/panel-controller.js"></script>
 
 		<script type="text/javascript">
+			loadConfig();
+
 			Timetable.Time.SetActualTime();
 			Panel.Time.Update(Timetable.Time);
 
-			//TODO: wyrzucić te dane do JSON'a konfiguracyjnego
-			days = ["Niedziela","Poniedziałek","Wtorek","Środa","Czwartek","Piątek","Sobota"];
-			lessons = ["Zerówka","1","2","3","4","5","6","7","8"]
-				console.log(days[Timetable.Time.day]);
-				console.log(lessons[Timetable.Time.lesson] + " godzina lekcyjna");
+			setInterval(onTimerTick, 6000); // 33 milliseconds = ~ 30 frames per sec
+			function onTimerTick() {
+			    Timetable.Time.SetActualTime();
+				Panel.Time.Update(Timetable.Time);
+				//console.log(lessons[Timetable.Time.lesson] + " godzina lekcyjna");
+			}
+
+			
+			
+			
+				//console.log(days[Timetable.Time.day]);
+				//console.log(lessons[Timetable.Time.lesson] + " godzina lekcyjna");
 			
 		</script>
 
