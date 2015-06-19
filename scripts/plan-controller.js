@@ -4,5 +4,4 @@ d3.xml("data/plan.svg", "image/svg+xml", function(xml) {
 });
 
 //Zmieniamy jego wielkość
-d3.select("#plan");
-$("#plan").css("height", $( window ).height());
+$("#canvas").find("svg").css("height", $( window ).height());
