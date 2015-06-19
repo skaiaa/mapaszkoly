@@ -19,15 +19,14 @@
 	<!-- Canvas -->
 	<!-- Cały plan szkoły przechowywany w jednym pliku. Każde piętro w odpowiedniej warstwie. Manipulacja poszczególnymi warstwami w celu pokazanie pięter podświetlania sal lekcyjnych -->
 	<div id="canvas">
-		
 	</div>
 	<!-- Panel -->
 	<!-- Przyciski, klasy, nauczyciele, guziczki zmienianie daty, godziny, sledzenie. -->
 	<div id="panel">
-		<div id="debug" class="col-xs-12 col-sm-12 col-md-12"></div>
 		<div id="time" class="col-xs-12 col-sm-6 col-md-6">
-			<h3>Godzina lekcyjna</h3>
+			<h3>Menu czasowe</h3>
 			<div data-toggle="buttons">
+				<!-- TODO: dodawać dni przy pomocy skryptu z JSON'a -->
 				<div id="days" class="btn-group btn-group-justified" data-toggle="buttons">
 				  <label id="1" class="btn btn-default col-xs-12">
 				    <input type="radio" name="options" autocomplete="off"> Poniedziałek
@@ -49,7 +48,7 @@
 				<div class="input-group">
 					<span class="input-group-addon" id="">Godz. lekcyjne</span>
 					<select id="lessons" class="form-control col-md-3">
-
+						<!-- TODO: dodawać godziny przy pomocy skryptu z JSON'a -->
 					  	<option id="1"> 8:10-8:55</option>
 						<option id="2"> 9:05-9:50</option>
 						<option id="3">10:00-10:45</option>
@@ -61,6 +60,7 @@
 					</select>
 				</div>
 				<br>
+				<!-- TODO: Przycisk aktywuje pętle aktualizującą, odznacza się po jakiejkolwiek akcji na przyciskach powyżej -->
 				<label id="actual-radio" class="btn btn-primary col-xs-12">
 					<input  type="radio" name="options" autocomplete="off"> Aktualny
 				</label>
@@ -85,6 +85,7 @@
 			Timetable.Time.SetActualTime();
 			Panel.Time.Update(Timetable.Time);
 
+			//TODO: wyrzucić te dane do JSON'a konfiguracyjnego
 			days = ["Niedziela","Poniedziałek","Wtorek","Środa","Czwartek","Piątek","Sobota"];
 			lessons = ["Zerówka","1","2","3","4","5","6","7","8"]
 				console.log(days[Timetable.Time.day]);
