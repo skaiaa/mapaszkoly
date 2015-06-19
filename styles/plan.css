@@ -1,0 +1,25 @@
+
+
+.walls {
+	fill: brown;
+}
+
+.hall {
+	fill: beige;
+}
+
+.classroom {
+	fill: #efeeee;
+}
+/* Poniższe klasy określają zachowanie klas po najechaniu np. myszkiem */
+.classroom:hover {
+	fill: #ffeeee;
+}
+
+.classroom:active {
+	fill: #ffdddd;
+}
+
+element {
+	fill: #ff00ff;
+}
