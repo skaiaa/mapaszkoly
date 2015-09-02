@@ -18,37 +18,70 @@
 <body>
 	<!-- Canvas -->
 	<!-- Cały plan szkoły przechowywany w jednym pliku. Każde piętro w odpowiedniej warstwie. Manipulacja poszczególnymi warstwami w celu pokazanie pięter podświetlania sal lekcyjnych -->
-	<div id="canvas">
-	</div>
+	<div id="canvas" class=" col-xs-12 col-sm-12 col-md-7"></div>
 	<!-- Panel -->
 	<!-- Przyciski, klasy, nauczyciele, guziczki zmienianie daty, godziny, sledzenie. -->
 	<div id="panel">
-		<div id="time" class="col-xs-12 col-sm-6 col-md-6">
-			<h3>Menu czasowe</h3>
+		<div id="position" class="col-xs-12 col-sm-6 col-md-5">
+			<h3>Pozycja</h3>
 			<div data-toggle="buttons">
-				<!-- TODO: dodawać dni przy pomocy skryptu z JSON'a -->
-				<div id="days" class="btn-group btn-group-justified" data-toggle="buttons">
-				  <label id="1" class="btn btn-default col-xs-12">
-				    <input type="radio" name="options" autocomplete="off"> Poniedziałek
+			<!-- TODO: Opcje generowane z JSON -->
+				<div id="levels" class="btn-group btn-group-justified" data-toggle="buttons">
+				  <label id="-1" class="btn btn-default col-xs-12">
+				    <input type="radio" value="-1" name="levels" autocomplete="off">-1<span class="hidden-xs"> Podziemie</span>
 				  </label>
-				  <label id="2" class="btn btn-default col-xs-12">
-				    <input type="radio" name="options" autocomplete="off"> Wtorek
+				  <label id="0" class="btn btn-default col-xs-12">
+				    <input type="radio" value="0" name="levels" autocomplete="off"> 0<span class="hidden-xs"> Parter</span>
+				  </label>
+				  <label id="1" class="btn btn-default col-xs-12">
+				    <input type="radio" value="1" name="levels" autocomplete="off"> 1<span class="hidden-xs"> Piętro</span>
+				  </label>
+				  <label id="2" class="btn btn-default col-xs-12 ">
+				    <input type="radio" value="2" name="levels" autocomplete="off"> 2<span class="hidden-xs"> Piętro</span>
 				  </label>
 				  <label id="3" class="btn btn-default col-xs-12">
-				    <input type="radio" name="options" autocomplete="off"> Środa
+				    <input type="radio" value="3" name="levels" autocomplete="off"> 3<span class="hidden-xs"> Piętro</span>
+				  </label>
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-addon" id="">Pomieszenie</span>
+					<select id="rooms" class="form-control col-md-3">
+					<!-- TODO: opcje generowane z JSON -->
+					  	<option id="1">placeholder</option>
+					</select>
+				</div>
+				<br>
+				
+			</div>
+			<hr>
+		</div>
+		<div id="time" class="col-xs-12 col-sm-6 col-md-5">
+			<h3>Godzina lekcyjna</h3>
+			<div data-toggle="buttons">
+			<!-- TODO: Opcje generowane z JSON -->
+				<div id="days" class="btn-group btn-group-justified" data-toggle="buttons">
+				  <label id="1" class="btn btn-default col-xs-12">
+				    <input type="radio" name="days" autocomplete="off"> Pon<span class="hidden-xs">iedziałek</span>
+				  </label>
+				  <label id="2" class="btn btn-default col-xs-12">
+				    <input type="radio" name="days" autocomplete="off"> Wto<span class="hidden-xs">rek</span>
+				  </label>
+				  <label id="3" class="btn btn-default col-xs-12">
+				    <input type="radio" name="days" autocomplete="off"> Śro<span class="hidden-xs">da</span>
 				  </label>
 				  <label id="4" class="btn btn-default col-xs-12 ">
-				    <input type="radio" name="options" autocomplete="off"> Czwartek
+				    <input type="radio" name="days" autocomplete="off"> Czw<span class="hidden-xs">artek</span>
 				  </label>
 				  <label id="5" class="btn btn-default col-xs-12">
-				    <input type="radio" name="options" autocomplete="off"> Piątek
+				    <input type="radio" name="days" autocomplete="off"> Pią<span class="hidden-xs">tek</span>
 				  </label>
 				</div>
 				<br>
 				<div class="input-group">
 					<span class="input-group-addon" id="">Godz. lekcyjne</span>
 					<select id="lessons" class="form-control col-md-3">
-						<!-- TODO: dodawać godziny przy pomocy skryptu z JSON'a -->
+					<!-- TODO: opcje generowane z JSON -->
 					  	<option id="1"> 8:10-8:55</option>
 						<option id="2"> 9:05-9:50</option>
 						<option id="3">10:00-10:45</option>
@@ -60,48 +93,46 @@
 					</select>
 				</div>
 				<br>
-				<!-- TODO: Przycisk aktywuje pętle aktualizującą, odznacza się po jakiejkolwiek akcji na przyciskach powyżej -->
 				<label id="actual-radio" class="btn btn-primary col-xs-12">
-					<input  type="radio" name="options" autocomplete="off"> Aktualny
+					<input  type="radio" name="days" autocomplete="off"> Aktualny
 				</label>
 				
 			</div>
 			<hr>
 		</div>
+		<div id="info" class="col-xs-12 col-sm-6 col-md-5">
+			<h3>O aplikacji</h3>
+			<a class="btn btn-default" href="https://github.com/skaiaa/mapaszkoly" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+			2015
+	 	</div>
+		<div id="debug" class="col-xs-12 col-sm-12 col-md-12"></div>
 	</div>
 	<!-- Scripts -->
-		<!-- jQuery2.x.min.js -->
+		<!-- CDNs -->
 		<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-		<!-- Bootstrap.min.js -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-		<!-- D3.min.js -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-
-		<script src="scripts/data-loader.js"></script>
+		<!-- Local -->
 		<script src="scripts/plan-controller.js"></script>
 		<script src="scripts/timetable-controller.js"></script>
 		<script src="scripts/panel-controller.js"></script>
 
 		<script type="text/javascript">
-			loadConfig();
-
-			Timetable.Time.SetActualTime();
-			Panel.Time.Update(Timetable.Time);
+			function afterLoad () {
+				Timetable.Time.SetActualTime();
+				Panel.Time.Update(Timetable.Time);
+				Panel.Position.Initialize();
+			}
 
 			setInterval(onTimerTick, 6000); // 33 milliseconds = ~ 30 frames per sec
 			function onTimerTick() {
 			    Timetable.Time.SetActualTime();
 				Panel.Time.Update(Timetable.Time);
-				//console.log(lessons[Timetable.Time.lesson] + " godzina lekcyjna");
 			}
 
-			
-			
-			
-				//console.log(days[Timetable.Time.day]);
-				//console.log(lessons[Timetable.Time.lesson] + " godzina lekcyjna");
-			
+			$( window ).resize(function() {
+			   Plan.Canvas.Update();
+			});
 		</script>
-
 </body>
 </html>
