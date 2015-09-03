@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<!-- Building plan style & classes colors -->
 	<link rel="stylesheet" type="text/css" href="styles/plan.css">
+	<link rel="stylesheet" type="text/css" href="styles/bootfix.css">
 </head>
 <body>
 	<!-- Canvas -->
@@ -22,8 +23,9 @@
 	<!-- Panel -->
 	<!-- Przyciski, klasy, nauczyciele, guziczki zmienianie daty, godziny, sledzenie. -->
 	<div id="panel">
-		<div id="position" class="col-xs-12 col-sm-6 col-md-5">
-			<h3>Pozycja</h3>
+		<div id="position" class="panel panel-default col-xs-12 col-sm-6 col-md-5">
+			<div class="panel-heading">Pozycja</div>
+			<div class="panel-body">
 			<div data-toggle="buttons">
 			<!-- TODO: Opcje generowane z JSON -->
 				<div id="levels" class="btn-group btn-group-justified" data-toggle="buttons">
@@ -54,10 +56,11 @@
 				<br>
 				
 			</div>
-			<hr>
+			</div>
 		</div>
-		<div id="time" class="col-xs-12 col-sm-6 col-md-5">
-			<h3>Godzina lekcyjna</h3>
+		<div id="time" class="panel panel-default col-xs-12 col-sm-6 col-md-5">
+			<div class="panel-heading">Godzina lekcyjna</div>
+			<div class="panel-body">
 			<div data-toggle="buttons">
 			<!-- TODO: Opcje generowane z JSON -->
 				<div id="days" class="btn-group btn-group-justified" data-toggle="buttons">
@@ -98,12 +101,14 @@
 				</label>
 				
 			</div>
-			<hr>
+			</div>
 		</div>
-		<div id="info" class="col-xs-12 col-sm-6 col-md-5">
-			<h3>O aplikacji</h3>
+		<div id="info" class="panel panel-default col-xs-12 col-sm-6 col-md-5">
+			<div class="panel-heading">O aplikacji</div>
+			<div class="panel-body">
 			<a class="btn btn-default" href="https://github.com/skaiaa/mapaszkoly" target="_blank"><i class="fa fa-github"></i> GitHub</a>
 			2015
+		</div>
 	 	</div>
 		<div id="debug" class="col-xs-12 col-sm-12 col-md-12"></div>
 	</div>
